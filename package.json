@@ -9,12 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@svgr/webpack": "^8.1.0",
     "framer-motion": "^11.3.21",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.4.0"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "prettier --ignore-path ./.prettierignore --write"
+    ],
+    "packages/**/*.json": [
+      "prettier --ignore-path ./.prettierignore --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "devDependencies": {
     "@types/node": "^20",
