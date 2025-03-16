@@ -16,10 +16,11 @@ export const HeroSection = () => {
           className="absolute inset-0 -z-30 opacity-5"
           style={{
             backgroundImage: `url(${grainImage.src})`,
+            pointerEvents: "none",
           }}
         ></div>
-        <div className="size-[620px] hero-ring"></div>{" "}
         {/* adding .hero-ring in global.css */}
+        <div className="size-[620px] hero-ring"></div>{" "}
         <div className="size-[820px] hero-ring"></div>
         <div className="size-[1020px] hero-ring"></div>
         <div className="size-[1220px] hero-ring"></div>
@@ -56,7 +57,7 @@ export const HeroSection = () => {
           <div className="size-2 bg-emerald-300/20 rounded-full"></div>
         </HeroOrbit>
       </div>
-      <div className="container">
+      <div className="container relative z-10">
         <div className="flex flex-col items-center">
           <Image
             src={memojiImage}
