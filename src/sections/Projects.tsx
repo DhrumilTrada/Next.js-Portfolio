@@ -58,10 +58,13 @@ export const ProjectsSection = () => {
           description="See how I've transformed concepts into engaging digital experiences."
         />
         <div className="flex flex-col mt-10 gap-20 md:mt-20">
-          {portfolioProjects.map((project) => (
+          {portfolioProjects.map((project, index) => (
             <Card
               key={project.title}
-              className="px-8 pt-8 pb-0 md:pt-12 md-px-10 lg:pt-16 lg:px-20 hover:transform hover:-translate-y-2 transition-transform duration-300"
+              className="px-8 pt-8 pb-0 md:pt-12 md-px-10 lg:pt-16 lg:px-20 hover:transform hover:-translate-y-2 transition-transform duration-300 sticky"
+              style={{
+                top: `calc(64px + ${index * 40}px)`,
+              }}
             >
               <div className="lg:grid lg:grid-cols-2 lg:gap-16">
                 <div className="lg:pb-16">
