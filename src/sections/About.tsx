@@ -164,7 +164,7 @@ export const AboutSection = () => {
                 {hobbies.map((hobby) => (
                   <motion.div
                     key={hobby.title}
-                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-tr from-emerald-300 to-sky-400 rounded-full py-1.5 absolute shadow-md shadow-gray-400/20"
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-tr from-emerald-300 to-sky-400 rounded-full py-1.5 absolute shadow-md cursor-pointer shadow-gray-400/20"
                     animate={{
                       left: hobby.left,
                       top: hobby.top,
@@ -182,6 +182,9 @@ export const AboutSection = () => {
                     <p>{hobby.emoji}</p>
                   </motion.div>
                 ))}
+              </div>
+              <div className="font-sans text-right relative right-4 bottom-2 text-white/60 font-semibold text-sm">
+                Drag me :)
               </div>
             </Card>
             <Card className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
