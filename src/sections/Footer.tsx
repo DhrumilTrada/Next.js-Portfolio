@@ -3,19 +3,19 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 const footerLinks = [
   {
     title: "Twitter",
-    href: "#",
+    href: "https://x.com/trada_dhrumil",
   },
   {
     title: "Github",
-    href: "#",
+    href: "https://github.com/DhrumilTrada",
   },
   {
     title: "LinkedIn",
-    href: "#",
+    href: "https://www.linkedin.com/in/dhrumil-trada/",
   },
   {
     title: "LeetCode",
-    href: "#",
+    href: "https://leetcode.com/u/dhrumiltrada11/",
   },
 ];
 
@@ -34,6 +34,7 @@ export const Footer = () => {
                 <a
                   href={link.href}
                   key={link.title}
+                  target="_blank"
                   className="inline-flex items-center gap-1.5"
                 >
                   <span className="font-semibold">{link.title}</span>

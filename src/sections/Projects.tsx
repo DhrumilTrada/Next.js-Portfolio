@@ -1,37 +1,36 @@
 import Image from "next/image";
-import DarkLandingPage from "@/assets/images/dark-saas-landing-page.png";
-import LightLandingPage from "@/assets/images/light-saas-landing-page.png";
+import JobPortalPage from "@/assets/images/job-portal.png";
+import DriveHexPage from "@/assets/images/drive-hex.png";
 import AiLandingPage from "@/assets/images/ai-startup-landing-page.png";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
-import grainImage from "@/assets/images/grain.jpg";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Job Portal",
+    year: "2024",
+    title: "Job Hunting Platform",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: DarkLandingPage,
+    link: "https://jobhunt-job-searching-portal-1.onrender.com/",
+    image: JobPortalPage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Car Rental",
+    year: "2024",
+    title: "Drive Hex Car Rentals",
     results: [
       { title: "Boosted sales by 20%" },
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
     link: "https://youtu.be/7hi5zwO75yc",
-    image: LightLandingPage,
+    image: DriveHexPage,
   },
   {
     company: "Quantum Dynamics",
@@ -88,7 +87,7 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <a href={project.link}>
+                  <a href={project.link} target="_blank">
                     <button className="bg-white text-gray-950 inline-flex md:w-auto px-6 items-center justify-center gap-2 mt-8 h-12 w-full rounded-xl font-semibold">
                       <span>Visit live site</span>
                       <ArrowUpRightIcon className="size-4" />
