@@ -1,5 +1,6 @@
 "use client";
 
+import TimelineSection from "@/components/TimelineSection";
 import { AboutSection } from "@/sections/About";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
@@ -67,12 +68,13 @@ export default function Home() {
         <ProjectsSection />
       </div>
       <TapeSection />
-      <div id="testimonials" ref={testimonialRef}>
-        <TestimonialsSection />
-      </div>
       <div id="about" ref={aboutRef}>
         <AboutSection />
       </div>
+      <div id="testimonials" ref={testimonialRef}>
+        <TestimonialsSection />
+      </div>
+      <TimelineSection />
       <div id="contact" ref={contactRef}>
         <ContactSection />
       </div>

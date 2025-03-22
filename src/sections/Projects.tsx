@@ -1,7 +1,7 @@
 import Image from "next/image";
 import JobPortalPage from "@/assets/images/job-portal.png";
 import DriveHexPage from "@/assets/images/drive-hex.png";
-import AiLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import FitLifePage from "@/assets/images/fit-life.png";
 import CheckCircleIcon from "@/assets/icons/check-circle.svg";
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -13,9 +13,9 @@ const portfolioProjects = [
     year: "2024",
     title: "Job Hunting Platform",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Cloudinary for image & pdf uploading" },
+      { title: "React redux store for state management" },
+      { title: "Role based access control" },
     ],
     link: "https://jobhunt-job-searching-portal-1.onrender.com/",
     image: JobPortalPage,
@@ -25,24 +25,24 @@ const portfolioProjects = [
     year: "2024",
     title: "Drive Hex Car Rentals",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Django + React for backend and frontend" },
+      { title: "Information data set for each cars present" },
+      { title: "Interactive user interface" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://github.com/DhrumilTrada/Car-Rental",
     image: DriveHexPage,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "FitLife",
+    year: "2024",
+    title: "FitLife - Fitness Website",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Django + React for backend and frontend" },
+      { title: "Full body svg vector for various body parts" },
+      { title: "External api integration for exercises" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: AiLandingPage,
+    link: "https://github.com/DhrumilTrada/Fit-Life",
+    image: FitLifePage,
   },
 ];
 

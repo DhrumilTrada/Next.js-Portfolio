@@ -165,7 +165,15 @@ export const HeroSection = () => {
             <span>Explore My Work</span>
             <ArrowDown className="size-4" />
           </button>
-          <button className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-4 rounded-xl">
+          <button
+            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-4 rounded-xl"
+            onClick={() =>
+              window.scrollTo({
+                top: document.getElementById("contact")?.offsetTop || 0,
+                behavior: "smooth",
+              })
+            }
+          >
             <span>👋</span>
             <span className="font-semibold">Let's Connect</span>
           </button>
