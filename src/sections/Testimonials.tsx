@@ -5,7 +5,6 @@ import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
 import memojiAvatar5 from "@/assets/images/memoji-avatar-5.png";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
-import grainImage from "@/assets/images/grain.jpg";
 import { Card } from "@/components/Card";
 import { Fragment } from "react";
 
@@ -47,9 +46,9 @@ export const TestimonialsSection = () => {
     <div className="py-16 lg:py-24">
       <div className="container">
         <SectionHeader
-          eyebrow="Happy Clients"
-          title="What Clients Say About Me"
-          description="Don't just take my word for it. See what my clients have to say about my work."
+          eyebrow="Testimonials"
+          title="What People Say About Me"
+          description="Don't just take my word for it. See what people have to say about my work."
         />
         <div className="mt-12 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4">
           <div className="flex gap-8 p-8 flex-none animate-move-left [animation-duration:90s] hover:[animation-play-state:paused]">
