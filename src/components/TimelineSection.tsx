@@ -15,6 +15,7 @@ const experience = {
     "Optimized build times for a Vue/Astro project with Strapi integration by leveraging local caching, enhancing the performance of the OpenObserve open-source initiative.",
     "Developed and maintained backend services using NestJS and TypeScript, ensuring scalability, maintainability, and adherence to best practices.",
     "Designed and documented RESTful APIs using NestJS and Swagger, enhancing API usability, maintainability, and developer efficiency. Implemented modular and scalable API structures to ensure smooth integration with front-end and third-party services.",
+    "Working on creating automated pipelines using Gitlab CI/CD to improve development workflow and ensure continuous delivery of high-quality code.",
   ],
 };
 
@@ -44,7 +45,7 @@ const TimelineSection = () => {
           <SectionHeader
             eyebrow="Timeline"
             title="My Work Experience"
-            description="Check out my previous work and what I've been working on."
+            description="Check out my work and what I've been working on."
           />
         </motion.div>
 

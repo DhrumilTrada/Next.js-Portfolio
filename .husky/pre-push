@@ -1,27 +1,27 @@
-echo "Debug: Running pre-push hook"
+# echo "Debug: Running pre-push hook"
 
-# Get the current branch name
-branch_name=$(git symbolic-ref --short HEAD)
-echo "Debug: Current branch name is '$branch_name'"
+# # Get the current branch name
+# branch_name=$(git symbolic-ref --short HEAD)
+# echo "Debug: Current branch name is '$branch_name'"
 
-# Define valid prefixes
-valid_prefixes="feature/ bugfix/ hotfix/ release/ experiment/ chore/ docs/ config/ feat/ fix/ refactor/ build/"
-echo "Debug: Valid prefixes are $valid_prefixes"
+# # Define valid prefixes
+# valid_prefixes="feature/ bugfix/ hotfix/ release/ experiment/ chore/ docs/ config/ feat/ fix/ refactor/ build/"
+# echo "Debug: Valid prefixes are $valid_prefixes"
 
-# Check if the branch name starts with one of the valid prefixes
-valid_branch=false
-for prefix in $valid_prefixes; do
-  if echo "$branch_name" | grep -q "^$prefix"; then
-    valid_branch=true
-    break
-  fi
-done
+# # Check if the branch name starts with one of the valid prefixes
+# valid_branch=false
+# for prefix in $valid_prefixes; do
+#   if echo "$branch_name" | grep -q "^$prefix"; then
+#     valid_branch=true
+#     break
+#   fi
+# done
 
-if [ "$valid_branch" = false ]; then
-  echo "Error: Branch name '$branch_name' does not start with a valid prefix."
-  echo "Valid prefixes are: $valid_prefixes"
-  exit 1
-fi
+# if [ "$valid_branch" = false ]; then
+#   echo "Error: Branch name '$branch_name' does not start with a valid prefix."
+#   echo "Valid prefixes are: $valid_prefixes"
+#   exit 1
+# fi
 
-echo "Branch name '$branch_name' is valid."
+# echo "Branch name '$branch_name' is valid."
 
