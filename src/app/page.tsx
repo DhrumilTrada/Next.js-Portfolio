@@ -16,7 +16,8 @@ export default function Home() {
   const aboutRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
-  const testimonialRef = useRef<HTMLDivElement>(null);
+  // const testimonialRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
 
   const [activeSection, setActiveSection] = useState<string>("home");
 
@@ -26,7 +27,8 @@ export default function Home() {
       about: aboutRef,
       projects: projectRef,
       contact: contactRef,
-      testimonials: testimonialRef,
+      // testimonials: testimonialRef,
+      experience: experienceRef,
     };
     refs[section]?.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -36,8 +38,9 @@ export default function Home() {
       { id: "home", ref: homeRef },
       { id: "project", ref: projectRef },
       { id: "about", ref: aboutRef },
-      { id: "testimonials", ref: testimonialRef },
+      // { id: "testimonials", ref: testimonialRef },
       { id: "contact", ref: contactRef },
+      { id: "experience", ref: experienceRef },
     ];
 
     const observer = new IntersectionObserver(
@@ -71,10 +74,12 @@ export default function Home() {
       <div id="about" ref={aboutRef}>
         <AboutSection />
       </div>
-      <div id="testimonials" ref={testimonialRef}>
+      {/* <div id="testimonials" ref={testimonialRef}>
         <TestimonialsSection />
+      </div> */}
+      <div id="experience" ref={experienceRef}>
+        <TimelineSection />
       </div>
-      <TimelineSection />
       <div id="contact" ref={contactRef}>
         <ContactSection />
       </div>

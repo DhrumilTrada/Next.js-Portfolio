@@ -12,10 +12,12 @@ const experience = {
   icon: Coffee,
   points: [
     "Designed and implemented MongoDB schemas to structure and optimize data storage for efficient querying and retrieval.",
-    "Optimized build times for a Vue/Astro project with Strapi integration by leveraging local caching, enhancing the performance of the OpenObserve open-source initiative.",
+    "Optimized build times for a Vue/Astro project with Strapi integration by leveraging local caching, enhancing the performance of the an 'open-source' initiative.",
     "Developed and maintained backend services using NestJS and TypeScript, ensuring scalability, maintainability, and adherence to best practices.",
     "Designed and documented RESTful APIs using NestJS and Swagger, enhancing API usability, maintainability, and developer efficiency. Implemented modular and scalable API structures to ensure smooth integration with front-end and third-party services.",
-    "Working on creating automated pipelines using Gitlab CI/CD to improve development workflow and ensure continuous delivery of high-quality code.",
+    "Creating automated pipelines using Gitlab CI/CD to improve development workflow and ensure continuous delivery of high-quality code.",
+    "Collaborated with a team of developers, designers, and project managers to deliver high-quality software solutions that meet business requirements and user needs.",
+    "Contributing to the research and backend development of a B2B SaaS platform focused on website auditing, advanced crawling, and performance metric analysis.",
   ],
 };
 
