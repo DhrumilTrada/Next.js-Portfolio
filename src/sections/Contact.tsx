@@ -71,7 +71,6 @@ export const ContactSection = () => {
 
   const validateEmail = (email: string): string | undefined => {
     if (!email.trim()) return "Email is required";
-    // Simple email regex validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) return "Email is invalid";
     return undefined;
@@ -85,13 +84,11 @@ export const ContactSection = () => {
   };
 
   // Validate entire form and return errors object
-  const validateForm = (data: FormData): FormErrors => {
-    return {
-      name: validateName(data.name),
-      email: validateEmail(data.email),
-      message: validateMessage(data.message),
-    };
-  };
+  const validateForm = (data: FormData): FormErrors => ({
+    name: validateName(data.name),
+    email: validateEmail(data.email),
+    message: validateMessage(data.message),
+  });
 
   // Handle input changes with dynamic validation
   const handleChange = (
@@ -100,7 +97,6 @@ export const ContactSection = () => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Validate current field on change
     let error: string | undefined;
     if (name === "name") error = validateName(value);
     else if (name === "email") error = validateEmail(value);
@@ -112,11 +108,9 @@ export const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate all fields
     const errors = validateForm(formData);
     setFormErrors(errors);
 
-    // If any errors exist, don't submit
     if (Object.values(errors).some((error) => error !== undefined)) return;
 
     setIsSubmitting(true);
@@ -129,11 +123,9 @@ export const ContactSection = () => {
       });
 
       if (res.ok) {
-        setIsModalOpen(false);
-        setFormData({ name: "", email: "", message: "" });
-        setFormErrors({});
+        setIsModalOpen(false); // just close modal here
+        // form reset handled after modal fully closes below
       } else {
-        // Optional: handle API error response here
         console.error("Submission failed");
       }
     } catch (error) {
@@ -181,7 +173,13 @@ export const ContactSection = () => {
       </div>
 
       {/* Modal */}
-      <AnimatePresence>
+      <AnimatePresence
+        onExitComplete={() => {
+          // Reset form AFTER modal fully closes
+          setFormData({ name: "", email: "", message: "" });
+          setFormErrors({});
+        }}
+      >
         {isModalOpen && (
           <motion.div
             className="fixed inset-0 z-50 backdrop-blur-sm bg-gray-200/40 flex justify-center items-center"
@@ -281,17 +279,17 @@ export const ContactSection = () => {
                     id="message"
                     name="message"
                     rows={4}
-                    className={`w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 ${
+                    className={`w-full border rounded-md px-4 py-2 focus:outline-none focus:ring-2 resize-none ${
                       formErrors.message
                         ? "border-red-500 focus:ring-red-400"
-                        : "border-gray-300 focus:ring-emerald-400"
+                        : "border-gray-300 focus:ring-sky-400"
                     }`}
                     value={formData.message}
                     onChange={handleChange}
                     aria-invalid={!!formErrors.message}
                     aria-describedby="message-error"
                     required
-                  ></textarea>
+                  />
                   {formErrors.message && (
                     <p id="message-error" className="text-red-600 text-sm mt-1">
                       {formErrors.message}
@@ -301,10 +299,9 @@ export const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-gray-900 text-white py-2 rounded-md hover:bg-gray-800 transition-all flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <span>{isSubmitting ? "Sending..." : "Send"}</span>
-                  <ArrowUpRightIcon className="size-4" />
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </motion.div>
